@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>كافيه عمورضا</title>
+  <style>
+    body {
+      direction: rtl;
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      background: #fff7f0;
+      color: #333;
+    }
+    header {
+      background-color: #5e3b2c;
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    header p {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .menu {
+      padding: 20px;
+    }
+    .menu h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #5e3b2c;
+    }
+    .category {
+      margin-bottom: 25px;
+    }
+    .category h3 {
+      background-color: #dba16b;
+      color: white;
+      padding: 10px 15px;
+      margin: 0;
+      font-size: 20px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+    }
+    .category ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border: 1px solid #ddd;
+      border-top: none;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      overflow: hidden;
+    }
+    .category li {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 15px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+    .category li:last-child {
+      border-bottom: none;
+    }
+    .form-section {
+      background: #fff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #ccc;
+    }
+    .form-section h3 {
+      margin-top: 0;
+      color: #5e3b2c;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #5e3b2c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .whatsapp-btn {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .whatsapp-btn a {
+      display: inline-block;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    footer {
+      background: #5e3b2c;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 24px;
+      }
+      .menu h2 {
+        font-size: 22px;
+      }
+      .category h3 {
+        font-size: 18px;
+      }
+      .category li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>كافيه عمورضا</h1>
+    <p>أهلاً بك في عالم المذاق الفاخر ☕</p>
+  </header>
+
+  <main>
+    <section class="menu">
+      <h2>المنيو</h2>
+
+      <div class="category">
+        <h3>المشروبات الساخنة</h3>
+        <ul>
+          <li><span>قهوة تركي / Turkish Coffee</span><span>15 جنيه</span></li>
+          <li><span>نسكافيه / Nescafé</span><span>20 جنيه</span></li>
+          <li><span>شاي / Tea</span><span>10 جنيه</span></li>
+          <li><span>كابتشينو / Cappuccino</span><span>25 جنيه</span></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>المشروبات الباردة</h3>
+        <ul>
+          <li><span>عصير برتقال / Orange Juice</span><span>18 جنيه</span></li>
+          <li><span>عصير مانجو / Mango Juice</span><span>22 جنيه</span></li>
+          <li><span>موهيتو / Mojito</span><span>28 جنيه</span></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>الحلويات</h3>
+        <ul>
+          <li><span>كيك شوكولاتة / Chocolate Cake</span><span>30 جنيه</span></li>
+          <li><span>تشيز كيك / Cheesecake</span><span>35 جنيه</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="form-section">
+      <h3>احجز طلبك / Place Your Order</h3>
+      <form id="orderForm">
+        <label for="name">اسمك / Your Name</label>
+        <input type="text" id="name" required>
+
+        <label for="phone">رقم الموبايل / Phone Number</label>
+        <input type="tel" id="phone" required>
+
+        <label for="table">رقم الطربيزة / Table Number</label>
+        <input type="text" id="table" required>
+
+        <label for="order">اختر طلبك / Select Your Order</label>
+        <select id="order" required>
+          <option disabled selected value="">-- اختر من القائمة --</option>
+          <optgroup label="☕ المشروبات الساخنة / Hot Drinks">
+            <option>قهوة تركي / Turkish Coffee</option>
+            <option>نسكافيه / Nescafé</option>
+            <option>شاي / Tea</option>
+            <option>كابتشينو / Cappuccino</option>
+          </optgroup>
+          <optgroup label="🥤 المشروبات الباردة / Cold Drinks">
+            <option>عصير برتقال / Orange Juice</option>
+            <option>عصير مانجو / Mango Juice</option>
+            <option>موهيتو / Mojito</option>
+          </optgroup>
+          <optgroup label="🍰 الحلويات / Desserts">
+            <option>كيك شوكولاتة / Chocolate Cake</option>
+            <option>تشيز كيك / Cheesecake</option>
+          </optgroup>
+        </select>
+
+        <button type="submit">إرسال الطلب على واتساب</button>
+      </form>
+    </div>
+
+    <div class="whatsapp-btn">
+      <a href="https://wa.me/201227004788" target="_blank">تواصل معنا على واتساب</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>العنوان: شارع الكافيهات، القاهرة</p>
+    <p>رقم الهاتف: 01227004788</p>
+  </footer>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const table = document.getElementById("table").value;
+      const order = document.getElementById("order").value;
+
+      const message = `اسم: ${name}%0aموبايل: ${phone}%0aرقم الطربيزة: ${table}%0aالطلب: ${order}`;
+      const whatsappNumber = "201227004788";
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    });
+  </script>
+
+</body>
+</html>
